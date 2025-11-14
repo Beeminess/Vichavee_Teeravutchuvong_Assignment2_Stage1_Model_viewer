@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Example Model Viewer</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="brand">
+            <span class="brand-dot"></span>
+            <span>BeeMine Cake</span>
+          </div>
+          <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#productions">Productions</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+
+    <main id="home">
+      <section class="hero-section">
+        <div class="hero-container">
+          <div class="hero-content">
+            <h1>Handcrafted Cakes for Every Occasion</h1>
+            <p>Experience the artistry of our premium cake collection. Each cake is carefully crafted with the finest ingredients and attention to detail.</p>
+            <p class="hero-subtitle">Made with love, delivered with care</p>
+            <a class="cta" href="#productions">Browse Our Cakes</a>
+          </div>
+          <div class="hero-model">
+            <model-viewer
+              src="assets/birthday_cake.glb"
+              alt="Black Forest Cake 3D Model"
+              camera-controls touch-action="pan-y" 
+              auto-rotate  
+              ar-modes="webxr scene-viewer quick-look" 
+              loading="lazy"
+              camera-orbit="90deg 70deg 80%"
+              field-of-view="70deg"
+            ></model-viewer>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="productions" class="section container">
+        <h2>Signature Cakes</h2>
+        <div class="grid">
+
+          <article class="card">
+            <model-viewer src="assets/blackforest.glb" 
+            camera-controls touch-action="pan-y" 
+            auto-rotate  
+            ar-modes="webxr scene-viewer quick-look" 
+            camera-controls tone-mapping="neutral" 
+            poster="poster.webp" 
+            shadow-intensity="1">
+          </model-viewer>
+            <div class="card-body">
+              <h3>Teddy Blackforest Cake</h3>
+            </div>
+          </article>
+
+
+          <article class="card">
+            <model-viewer src="assets/chocolate.glb" 
+            camera-controls touch-action="pan-y" 
+            auto-rotate  
+            ar-modes="webxr scene-viewer quick-look" 
+            camera-controls tone-mapping="neutral" 
+            poster="poster.webp" 
+            shadow-intensity="1">
+          </model-viewer>
+            <div class="card-body">
+              <h3>Teddy Chocolate Cake</h3>
+            </div>
+          </article>
+
+
+          <article class="card">
+            <model-viewer src="assets/strawberry.glb" 
+            camera-controls touch-action="pan-y" 
+            auto-rotate  
+            ar-modes="webxr scene-viewer quick-look" 
+            camera-controls tone-mapping="neutral" 
+            poster="poster.webp" 
+            shadow-intensity="1">
+          </model-viewer>
+            <div class="card-body">
+              <h3>Teddy Strawberry Cake</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Cake Image Slider -->
+    <section class="cake-slider-section">
+      <div class="slider-container">
+        <h2 class="slider-title">Explore Our Collection</h2>
+        <div class="slider-wrapper">
+          <div class="main-image-container">
+            <model-viewer
+              id="mainCakeViewer"
+              src="assets/blackforest.glb"
+              alt="Main Cake View"
+              camera-controls
+              auto-rotate
+              loading="lazy"
+              shadow-intensity="1"
+              exposure="1"
+              camera-orbit="0deg 75deg 105%"
+              field-of-view="45deg"
+            ></model-viewer>
+          </div>
+          <div class="thumbnail-container">
+            <div class="thumbnail-item active" data-src="assets/blackforest.glb" data-alt="Teddy Blackforest Cake">
+              <model-viewer
+                src="assets/blackforest.glb"
+                alt="Teddy Blackforest Cake"
+                camera-controls
+                auto-rotate
+                loading="lazy"
+                shadow-intensity="1"
+                interaction-policy="allow-when-focused"
+              ></model-viewer>
+              <span class="thumbnail-label">Blackforest</span>
+            </div>
+            <div class="thumbnail-item" data-src="assets/chocolate.glb" data-alt="Teddy Chocolate Cake">
+              <model-viewer
+                src="assets/chocolate.glb"
+                alt="Teddy Chocolate Cake"
+                camera-controls
+                auto-rotate
+                loading="lazy"
+                shadow-intensity="1"
+                interaction-policy="allow-when-focused"
+              ></model-viewer>
+              <span class="thumbnail-label">Chocolate</span>
+            </div>
+            <div class="thumbnail-item" data-src="assets/strawberry.glb" data-alt="Teddy Strawberry Cake">
+              <model-viewer
+                src="assets/strawberry.glb"
+                alt="Teddy Strawberry Cake"
+                camera-controls
+                auto-rotate
+                loading="lazy"
+                shadow-intensity="1"
+                interaction-policy="allow-when-focused"
+              ></model-viewer>
+              <span class="thumbnail-label">Strawberry</span>
+            </div>
+            <div class="thumbnail-item" data-src="assets/birthday_cake.glb" data-alt="Birthday Cake">
+              <model-viewer
+                src="assets/birthday_cake.glb"
+                alt="Birthday Cake"
+                camera-controls
+                auto-rotate
+                loading="lazy"
+                shadow-intensity="1"
+                interaction-policy="allow-when-focused"
+              ></model-viewer>
+              <span class="thumbnail-label">Birthday</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <div class="logo-placeholder">
+              <img src="" alt="BeeMine Cake Logo" class="footer-logo-img" id="footerLogo">
+              <span class="logo-text">BeeMine Cake</span>
+            </div>
+            <p class="footer-tagline">Handcrafted with love, delivered with care</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#productions">Our Cakes</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Contact</h4>
+              <ul>
+                <li>Email: info@beeminecake.com</li>
+                <li>Phone: (555) 123-4567</li>
+                <li>Address: 123 Cake Street</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© <span id="year"></span> BeeMine Cake. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+  </body>
+  </html>
+
+
+
+
+
+
+
+    
